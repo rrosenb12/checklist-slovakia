@@ -9,7 +9,27 @@ class ChecklistsController < ApplicationController
 	
 	end
 
+	def new
+
+	end
+
+	def create
+
+	end
+
+	def edit
+		
+	end
+
+	def update
+		@checklist.update(checklist_params)
+	end
+
 	private 
+
+	def checklist_params
+		params.require(:checklist).permit(:title)
+	end
 
 	def find_checklist
 		@checklist = Checklist.find(params[:id])

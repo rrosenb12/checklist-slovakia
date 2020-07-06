@@ -1,0 +1,2 @@
+class TaskChecklistsController < ApplicationController
+end

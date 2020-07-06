@@ -1,0 +1,6 @@
+<p> <%= @category.category_name %>  </p>
+<h5> Checklist Names </h5>
+
+<% @category.checklists.each do |checklist| %> 
+<p> <%=link_to checklist.title, checklist_path(checklist) %>  </p>
+<% end %> 

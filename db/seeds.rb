@@ -30,7 +30,7 @@ end
 
 puts "creating tasks"
 10.times do 
-	Task.create(timer_id: Timer.all.sample.id, category_id: Category.all.sample.id)
+	Task.create(timer_id: Timer.all.sample.id, category_id: Category.all.sample.id, name: Faker::Job.key_skill, description: Faker::Job.employment_type)
 end
 
 puts "creating task-checklists"

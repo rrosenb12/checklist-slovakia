@@ -7,13 +7,10 @@ class CategoriesController < ApplicationController
 	end
 
 	def show
+		
 	end
 
 	private
-
-	def params
-
-	end
 
 	def find_category
 		@category = Category.find(params[:id])

@@ -1,4 +1,4 @@
-class Task < ApplicationRecord
+  class Task < ApplicationRecord
     belongs_to :timer
     belongs_to :category
     has_many :task_checklists

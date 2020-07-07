@@ -10,8 +10,17 @@
 </ul>
 </p>
 
-<%= link_to "add a task", new_task_checklist_path %>
-<!-- <%= button_to 'add a task to this checklist' %> -->
+<h1> Add a Task to a Checklist </h1>
+
+<%= form_for @task_checklist do |f| %>
+    <%= f.label :task_id %>
+    <%= f.collection_select :task_id, Task.all, :id, :name %>
+
+    <%= f.hidden_field :checklist_id, value: @checklist.id %>
+
+    <%= f.submit %>
+
+<% end %>
 
 <p>Delete this checklist?</p>
 <%= button_to 'delete checklist', @checklist, method: :delete %>

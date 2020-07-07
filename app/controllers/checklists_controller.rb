@@ -2,10 +2,11 @@ class ChecklistsController < ApplicationController
 	before_action :find_checklist, only: [:show, :edit, :update, :destroy]
 
 	def index 
-		# @checklists = Checklist.find_by(category_name: )
+		@checklists = Checklist.all
 	end
 
 	def show
+		@task_checklist = TaskChecklist.new 
 	end
 
 	def new

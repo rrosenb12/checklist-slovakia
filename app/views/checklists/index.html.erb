@@ -1,8 +1,11 @@
 <h1>All Checklists</h1>
 
-<% @checklists.each do |checklist| %>
-    <%= link_to(checklist.title, checklist_path(checklist))%>
-<% end %>
+<ul>
+    <% @checklists.each do |checklist| %>
+        <li><%= link_to(checklist.title, checklist_path(checklist))%></li>
+    <% end %>
+</ul>
 
 <p>What do you want to do?</p>
-<%= link_to "Create a New Checklist", new_checklist_path%>
+
+<%= link_to "Create a New Checklist", new_checklist_path %>

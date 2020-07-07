@@ -22,8 +22,7 @@ class ChecklistsController < ApplicationController
 	end
 
 	def edit
-		#create a task from a checklist, and also just figure out how to not have
-		# to go through joiner table maybe???
+
 	end
 
 	def update

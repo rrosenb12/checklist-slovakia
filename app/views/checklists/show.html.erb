@@ -1,21 +1,22 @@
-<%= @checklist.title %>
+<h1><%= @checklist.title %></h1>
 
-<h3>Time to Complete: <%=@checklist.total_time%> minutes </h3>
-<%= button_to "start timer" %>
-<h2> Upcoming Tasks: </h2>
+<h2>
+	Time to Complete: <%=@checklist.total_time%> minutes 
+	<%= button_to 'Start Timer' %>
+</h2>
+
+<h3> Upcoming Tasks: </h3>
 <p>
-<% @checklist.tasks.each do |task| %>
-<ul>
-	<li>
-	<%= check_box_tag task.name, :remember_me, params[:remember_me] %>
-	<%= label_tag task.name%>
-	</li>
-</ul>
-<% end %>
-<%= link_to 'submit', checklist_path(@checklist) %>
+	<% @checklist.tasks.each do |task| %>
+		<p>
+			<%= check_box_tag task.name, :remember_me, params[:remember_me] %>
+			<%= label_tag task.name%>
+		</p>
+	<% end %>
+	<%= button_to 'Submit', @checklist, method: :update %>
 </p>
 
-<h1> Add a Task to a Checklist </h1>
+<h3> Add a Task to This Checklist </h3>
 
 <%= form_for @task_checklist do |f| %>
     <%= f.label :task_id %>
@@ -23,9 +24,9 @@
 
     <%= f.hidden_field :checklist_id, value: @checklist.id %>
 
-    <%= f.submit %>
+    <%= f.submit 'Add' %>
 
 <% end %>
 
 <p>Delete this checklist?</p>
-<%= button_to 'delete checklist', @checklist, method: :delete %>
+<%= button_to 'Delete Checklist', @checklist, method: :delete %>

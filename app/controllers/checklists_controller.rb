@@ -5,6 +5,8 @@ class ChecklistsController < ApplicationController
 		@checklists = Checklist.all
 	end
 
+
+
 	def show
 		@task_checklist = TaskChecklist.new 
 	end

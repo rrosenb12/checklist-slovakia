@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    # validates :username, presence: true
-    # validates :username, uniqueness: true
-
+    def user_checklists
+    	self.checklists.each{|checklist| checklist.title}
+    end
 
 end

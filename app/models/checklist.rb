@@ -6,10 +6,15 @@ class Checklist < ApplicationRecord
     has_many :tasks, through: :task_checklists
     has_many :timers, through: :tasks 
 
+    # validates :title, uniqueness: true, presence: true
+
+
     def total_time
         minutes_array = self.timers.map do |timer|
             timer.minutes
         end
         minutes_array.sum
     end
+
 end
+

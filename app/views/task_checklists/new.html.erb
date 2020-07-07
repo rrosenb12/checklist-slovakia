@@ -4,8 +4,7 @@
     <%= f.label :task_id %>
     <%= f.collection_select :task_id, Task.all, :id, :name %>
 
-    <%= f.label :checklist_id %>
-    <%= f.collection_select :checklist_id, Checklist.all, :id, :title %>
+    <%= f.hidden_field :checklist_id, :value => @checklist.id %>
 
     <%= f.submit %>
 

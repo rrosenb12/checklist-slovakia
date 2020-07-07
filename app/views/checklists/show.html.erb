@@ -4,10 +4,15 @@
 <%= button_to "start timer" %>
 <h2> Upcoming Tasks: </h2>
 <p>
-<ul><% @checklist.tasks.each do |task| %>
-	<li><%= task.name %></li>
-<% end %>
+<% @checklist.tasks.each do |task| %>
+<ul>
+	<li>
+	<%= check_box_tag task.name, :remember_me, params[:remember_me] %>
+	<%= label_tag task.name%>
+	</li>
 </ul>
+<% end %>
+<%= link_to 'submit', checklist_path(@checklist) %>
 </p>
 
 <h1> Add a Task to a Checklist </h1>

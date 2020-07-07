@@ -6,29 +6,36 @@ class ChecklistsController < ApplicationController
 	end
 
 	def show
-	
 	end
 
 	def new
-
+		@checklist = Checklist.new
 	end
 
 	def create
+		@checklist = Checklist.create(checklist_params)
 
+		redirect_to checklist_path(@checklist.id)
 	end
 
 	def edit
-		
+		#create a task from a checklist, and also just figure out how to not have
+		# to go through joiner table maybe???
 	end
 
 	def update
 		@checklist.update(checklist_params)
 	end
 
+	def destroy
+		@checklist.delete
+		redirect_to category_path(@checklist.category)
+	end
+
 	private 
 
 	def checklist_params
-		params.require(:checklist).permit(:title)
+		params.require(:checklist).permit(:category_id, :title)
 	end
 
 	def find_checklist

@@ -1,0 +1,11 @@
+<h1>Make a new Checklist</h1>
+
+<%= form_for @checklist do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :category_name %>
+
+    <%= f.submit%>
+<% end %>

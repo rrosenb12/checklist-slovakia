@@ -1,5 +1,15 @@
 <%= @checklist.title %>
-
-<p><% @checklist.tasks.each do |task| %>
+<% @checklist.timers.sum do |timer| %>
+	<h3>Time to Complete: <%=timer.minutes%> </h3>
+<% end %>
+<h2> Upcoming Tasks: </h2>
+<p>
+<% @checklist.tasks.each do |task| %>
 	<%= task.name %>
-<% end %></p>
+<% end %>
+</p>
+
+<!-- <%= button_to 'add a task to this checklist' %> -->
+
+<p>Delete this checklist?</p>
+<%= button_to 'delete checklist', @checklist, method: :delete %>

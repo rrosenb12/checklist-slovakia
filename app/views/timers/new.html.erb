@@ -1,0 +1,8 @@
+<h1> Make a new Timer </h1>
+
+<%= form_for @timer do |f| %>
+    <%=f.label :minutes %>
+    <%=f.number_field :minutes%>
+
+    <%=f.submit %>
+<% end %>

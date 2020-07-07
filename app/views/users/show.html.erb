@@ -3,6 +3,8 @@
     <%= link_to(checklist.title, checklist_path(checklist))%>
 <% end %>
 
+<%= link_to "make a new checklist", new_checklist_path %>
+
 <%= link_to("edit this user", edit_user_path(@user))%>
 <p>Delete this user?</p>
 <%= button_to 'delete user', @user, method: :delete %>

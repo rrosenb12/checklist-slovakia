@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        current_user = User.find_by_id(session[:current_user_id])
+        @user = User.find(session[:user_id])
     end
 
     def new
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         if @user.valid?
             session[:user_id] = @user.id
-            redirect_to '/welcome'
+            redirect_to user_path(@user)
         else
             redirect_to new_user_path
         end

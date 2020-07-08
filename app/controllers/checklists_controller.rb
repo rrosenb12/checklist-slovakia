@@ -19,12 +19,16 @@ class ChecklistsController < ApplicationController
 
 	def new
 		@checklist = Checklist.new
+		5.times do
+			@checklist.task_checklists.build
+		end
 	end
 
 	def create
+		# byebug
 		@checklist = Checklist.create(checklist_params)
 		current_user.checklists << @checklist
-
+		TaskChecklist.create(:checklist_id => @checklist.id, :task_id => params[:task_id])
 		redirect_to checklist_path(@checklist.id)
 	end
 
@@ -44,7 +48,7 @@ class ChecklistsController < ApplicationController
 
 	def checklist_params
 		params.require(:checklist).permit(
-			:category_id, :title, :task_name
+			:category_id, :title, :task_attributes => [:id, :name, :description]
 		)
 	end
 

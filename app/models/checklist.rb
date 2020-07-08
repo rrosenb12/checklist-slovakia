@@ -5,7 +5,7 @@ class Checklist < ApplicationRecord
     has_many :task_checklists
     has_many :tasks, through: :task_checklists
     has_many :timers, through: :tasks 
-    accepts_nested_attributes_for :tasks
+    accepts_nested_attributes_for :task_checklists
 
     # validates :title, uniqueness: true, presence: true
 

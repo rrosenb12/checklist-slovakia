@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :find_user, only: [:show, :edit, :update, :destroy]
+    before_action :find_user, only: [:edit, :update, :destroy]
     skip_before_action :auth_user, only: [:new, :create]
 
     def index
@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        current_user = User.find_by_id(session[:current_user_id])
     end
 
     def new
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         if @user.valid?
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to '/welcome'
         else
             redirect_to new_user_path
         end

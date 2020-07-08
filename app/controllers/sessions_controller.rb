@@ -1,20 +1,32 @@
 class SessionsController < ApplicationController
-    
-    skip_before_action :auth_user, only: [:login, :create]
+
+    skip_before_action :auth_user, only: [:new, :create, :welcome]
+
+    def new
+        @user = User.new 
+    end
+      
+    def create
+        @user = User.find_by(username: params[:username])
+        
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
+            redirect_to user_path
+        else  
+            redirect_to '/login'
+        end 
+    end 
 
     def login 
     end 
-  
-    def create
-        user = User.find_by(username: params[:session][:username])
+
+    def welcome
         
-        if user.authenticate(params[:session][:password])
-            session[:user_id] = user.id
-            redirect_to user_path
-        else  
-            redirect_to new_login_path
-        end 
-    end 
+    end
+
+    def page_requires_login
+        
+    end
 
     def logout
         session.delete(:user_id)

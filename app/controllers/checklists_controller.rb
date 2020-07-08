@@ -5,8 +5,6 @@ class ChecklistsController < ApplicationController
 		@checklists = Checklist.all
 	end
 
-
-
 	def show
 		@task_checklist = TaskChecklist.new 
 	end
@@ -23,7 +21,6 @@ class ChecklistsController < ApplicationController
 	end
 
 	def edit
-
 	end
 
 	def update
@@ -38,7 +35,10 @@ class ChecklistsController < ApplicationController
 	private 
 
 	def checklist_params
-		params.require(:checklist).permit(:category_id, :title)
+		params.require(:checklist).permit(
+			:category_id, :title, 
+			task_attributes: [:id, :name, :description]
+		)
 	end
 
 	def find_checklist

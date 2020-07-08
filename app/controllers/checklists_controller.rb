@@ -27,7 +27,9 @@ class ChecklistsController < ApplicationController
 		@checklist = Checklist.create(checklist_params)
 		if @checklist.valid?	
 			current_user.checklists << @checklist
-			TaskChecklist.create(:checklist_id => @checklist.id, :task_id => params[:task_id])
+			params[:task_id].each do |taskid|
+				TaskChecklist.create(:checklist_id => @checklist.id, :task_id => taskid)
+			end
 			redirect_to checklist_path(@checklist.id)
 		else
 			flash[:my_errors] = @checklist.errors.full_messages

@@ -9,6 +9,13 @@ class Checklist < ApplicationRecord
 
     validates :title, uniqueness: true, presence: true
 
+    def task_ids=(ids)
+        ids.each do |id|
+          task = Task.find(id)
+          self.tasks << task
+        end
+      end
+
     def total_time
         minutes_array = self.timers.map do |timer|
             timer.minutes

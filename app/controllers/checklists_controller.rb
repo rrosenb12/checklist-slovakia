@@ -19,17 +19,15 @@ class ChecklistsController < ApplicationController
 
 	def new
 		@checklist = Checklist.new
-		5.times do
-			@checklist.task_checklists.build
-		end
+		@checklist.task_checklists.build
 	end
 
 	def create
 		# byebug
 		@checklist = Checklist.create(checklist_params)
-		current_user.checklists << @checklist
-		TaskChecklist.create(:checklist_id => @checklist.id, :task_id => params[:task_id])
-		redirect_to checklist_path(@checklist.id)
+			current_user.checklists << @checklist
+			TaskChecklist.create(:checklist_id => @checklist.id, :task_id => params[:task_id])
+			redirect_to checklist_path(@checklist.id)
 	end
 
 	def edit

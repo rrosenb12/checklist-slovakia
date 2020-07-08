@@ -5,7 +5,7 @@
     <%= f.text_field :title %>
     <%= f.label :category_id %>
     <%= f.collection_select :category_id, Category.all, :id, :category_name %>
-    	<%= fields_for :task_checklists do |ff| %>
+    	<%= fields_for @task_checklists do |ff| %>
     		<%= ff.collection_select :task_id, Task.all, :id, :name %>
     	<% end %>
     <%= f.submit %>

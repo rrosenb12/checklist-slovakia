@@ -1,6 +1,14 @@
 class ChecklistsController < ApplicationController
 	before_action :find_checklist, only: [:show, :edit, :update, :destroy]
 
+	def task_name=(name)
+		self.task = Task.find_or_create_by(name: name)
+	end
+
+	def task_name
+		self.task ? self.task.name : nil
+	end
+
 	def index 
 		@checklists = Checklist.all
 	end
@@ -36,8 +44,7 @@ class ChecklistsController < ApplicationController
 
 	def checklist_params
 		params.require(:checklist).permit(
-			:category_id, :title, 
-			task_attributes: [:id, :name, :description]
+			:category_id, :title, :task_name
 		)
 	end
 

@@ -7,12 +7,7 @@
     <%= f.label :category_id %>
     <%= f.collection_select :category_id, Category.all, :id, :category_name %>
 
-    <%= fields_for :tasks do |ff| %>
-    
-    <%= ff.label :name %>
-    <%= ff.collection_select :name, Task.all, :id, :name %>
-
-    <% end %>
+    <%= f.collection_select :task_name, Task.all, :name, :name %>
 
     <%= f.submit %>
 <% end %>

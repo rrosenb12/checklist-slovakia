@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :checklists
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  post '/checklists/:id/follow', to: "checklists#follow", as: "follow_checklist"
+  post '/checklists/:id/unfollow', to: "checklists#unfollow", as: "unfollow_checklist"
 
   get 'welcome', to: 'sessions#welcome'
   get '/sessions/new', to: 'sessions#login', as: 'new_login'  
@@ -22,3 +25,4 @@ Rails.application.routes.draw do
   get 'authorized', to: 'sessions#page_requires_login'
 
 end
+

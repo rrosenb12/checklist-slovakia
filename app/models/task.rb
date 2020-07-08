@@ -6,4 +6,6 @@ class Task < ApplicationRecord
     has_many :checklists, through: :task_checklists
     has_many :users, through: :checklists
 
+    validates :name, presence: true
+
 end

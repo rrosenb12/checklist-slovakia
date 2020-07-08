@@ -25,9 +25,14 @@ class ChecklistsController < ApplicationController
 	def create
 		# byebug
 		@checklist = Checklist.create(checklist_params)
+		if @checklist.valid?	
 			current_user.checklists << @checklist
 			TaskChecklist.create(:checklist_id => @checklist.id, :task_id => params[:task_id])
 			redirect_to checklist_path(@checklist.id)
+		else
+			flash[:my_errors] = @checklist.errors.full_messages
+			redirect_to new_checklist_path
+		end
 	end
 
 	def edit

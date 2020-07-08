@@ -18,6 +18,12 @@
 
 <h3> Add a Task to This Checklist </h3>
 
+  <% if flash[:my_errors] %>
+    <% flash[:my_errors].each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+
 <%= form_for @task_checklist do |f| %>
     <%= f.label :task_id %>
     <%= f.collection_select :task_id, Task.all, :id, :name %>

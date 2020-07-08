@@ -1,3 +1,9 @@
+  <% if flash[:my_errors] %>
+    <% flash[:my_errors].each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+
 <h1>Make a new Checklist</h1>
 
 <%= form_for @checklist do |f| %>

@@ -6,7 +6,12 @@ class TaskChecklistsController < ApplicationController
 
     def create
         @task_checklist = TaskChecklist.create(task_checklist_params)
-        redirect_to checklist_path(@task_checklist.checklist)
+        if @task_checklist.valid?
+            redirect_to checklist_path(@task_checklist.checklist)
+        else
+            flash[:my_errors] = @task_checklist.errors.full_messages
+            redirect_to checklist_path(@task_checklist.checklist)
+        end
     end
 
     private

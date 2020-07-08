@@ -1,5 +1,6 @@
 <h1><%= @user.username %></h1>
 
+Your checklists:
 <% @user.checklists.each do |checklist| %>
     <%= link_to(checklist.title, checklist_path(checklist))%>
 <% end %>
@@ -17,24 +18,13 @@
 <br>
 <br>
 
-<p>
     Delete this user?
     <%= button_to 'Delete User', @user, method: :delete %>
-</p>
 
 <br>
 <br>
 
-<% if @user.user_checklists.count == 0 %>
-    <%= link_to "Explore Checklists", checklists_path %>
-<% else %>
-	<h3> Your Followed Checklists </h3>
-	<ul> 
-	    <% @user.user_checklists.each do |user_checklist| %>
-	        <li><%= link_to user_checklist.title, checklist_path %></li>
-	    <% end %>
-	<%= link_to "Explore Checklists", checklists_path %>
-	</ul>
-<% end %>
+<%= link_to "Explore Checklists", checklists_path %>
+
 
 <%= link_to "log-out", sessions_logout_path, method: :delete %>

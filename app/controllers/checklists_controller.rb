@@ -17,6 +17,7 @@ class ChecklistsController < ApplicationController
 
 	def create
 		@checklist = Checklist.create(checklist_params)
+		current_user.checklists << @checklist
 
 		redirect_to checklist_path(@checklist.id)
 	end

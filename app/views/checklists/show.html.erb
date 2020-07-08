@@ -28,10 +28,8 @@
 
 <% end %>
 
-<h5> Owner of this Checklist </h5>
-<% @checklist.users.map do |user| %>
-	<%= user.username %>
-<%end %>
+<h5> Owner of this Checklist </h5> <%= @checklist.users.first.username %>
+
 <%=link_to "follow-checklist", follow_checklist_path, method: :post %>  
 
 <p>Delete this checklist?</p>

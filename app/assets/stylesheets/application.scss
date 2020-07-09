@@ -11,7 +11,7 @@ body {
   text-align: center;
   vertical-align: middle;
   height: 60px;
-  border-bottom: 5px solid #12457f; }
+  border-bottom: 5px solid black; }
   .navbar ul {
     background-color: #12457f;
     margin: 0px auto 0px auto;
@@ -29,8 +29,6 @@ body {
 input[type="submit"] {
   color: #12457f;
   background-color: white;
-  /* border: 300px;
-  border-color: #12457f; */
   width: 120px;
   height: 50px;
   font-family: 'Indie Flower';
@@ -40,8 +38,7 @@ input[type="submit"] {
     transform: rotate(360deg);
     transition: all 1s ease-in-out 0s;
     background-image: url("flag1.png");
-    object-fit: fill; 
-  }
+    object-fit: fill; }
 
 input[type=text], select {
   width: 100%;
@@ -50,9 +47,7 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
-  background-color: #12457f; 
-  color: white;
-}
+  background-color: #12457f; }
 
 input[type=password], select {
   width: 100%;
@@ -61,9 +56,7 @@ input[type=password], select {
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
-  background-color: #D71F19; 
-  color: white;
-}
+  background-color: #D71F19; }
 
 select {
   width: 20%;
@@ -103,37 +96,15 @@ img:hover {
   margin: 0 auto;
   text-align: center; }
 
+.user_checklists {
+  clear: both;
+  width: 500px;
+  float: left; }
 
 .user_name {
   margin: 0 auto;
   text-align: center;
   width: 400px; }
-  .user_name .user_buttons{
-    margin-left: 80px;
-  }
-  .user_name .user_buttons .create_button{
-    float: left;
-  }
-  .user_name .user_buttons .edit_button{
-    float: left;
-  }
-  .user_name .user_buttons .delete_button{
-    float: left;
-    margin-left: 60px;
-  }
-  .user_name .user_checklists {
-    padding: 10px;
-    width: 350px;
-    float: left; 
-    margin: 10px;
-    text-align: center;
-  }
-    .user_name .user_checklists ul {
-      float: left;
-      text-align: left;
-      margin-top: 1px;
-      padding-top: 0px;
-    }
 
 .list-wrapper {
   width: 500px;
@@ -141,19 +112,12 @@ img:hover {
   margin: 0 auto; }
   .list-wrapper .upcoming_tasks {
     margin-top: 20px;
-    border: 1px solid black; }  
+    border: 1px solid black; }
 
-.username_field {
-  background-color: #D71F19;
-}
+.checklist_tasks {
+  margin: 0 auto; }
 
-.drop_downs {
-  padding-left: 100px;
-  text-align: center;
-}
-  .drop_downs .checklist_tasks {
-    padding-left: 0px;
-  
-  }
+.user_buttons {
+  background-color: red; }
 
-/*# sourceMappingURL=application.css.map */
+/*# sourceMappingURL=application.scss.map */

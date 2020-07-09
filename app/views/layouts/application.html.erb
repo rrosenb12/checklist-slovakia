@@ -13,8 +13,8 @@
     <div class="navbar">  
       <% if current_user %> 
        <ul>  
-          <li class="right"> <%= button_to "Explore", 'checklists_path', method: :get%> </li>
-          <li class="right"> <%= button_to "Create", 'new_checklist_path', method: :get%></li>
+          <li class="right"> <%= button_to "Explore", '/checklists', method: :get%> </li>
+          <li class="right"> <%= button_to "Create", '/checklists/new', method: :get%></li>
         </ul>
       <% else%>
       <ul>  

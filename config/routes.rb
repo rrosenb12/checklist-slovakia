@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   resources :checklists
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root get '/', to: 'sessions#welcome'
+  get '/', to: 'sessions#welcome', as: 'welcome'
   post '/checklists/:id/follow', to: 'checklists#follow', as: 'follow_checklist'
   post '/checklists/:id/unfollow', to: 'checklists#unfollow', as: 'unfollow_checklist'
+
+  get '/checklists', to: 'checklists#index', as: 'checklists_path'
+  get '/new_checklist_path', to: 'checklists#new', as: 'new_checklist_path'
 
   get 'welcome', to: 'sessions#welcome'
   get '/sessions/new', to: 'sessions#login', as: 'new_login'  

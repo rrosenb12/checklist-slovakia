@@ -4,21 +4,23 @@
 
 <div class="user_name">
     <h1><%= @user.username.upcase %></h1>
-    <%= button_to "Create List", new_checklist_path, method: :get %>
+    <div class="user_buttons">
+    <div class="create_button"><%= button_to "Create List", new_checklist_path, method: :get %></div>
 
-<br>
 
-<%= button_to "Edit User", edit_user_path(@user), method: :get %>
+<div class="edit_button"><%= button_to "Edit User", edit_user_path(@user), method: :get %></div>
 
-<br>
 
-    <%= button_to 'Delete User', @user, method: :delete %>
+
+    <div class="delete_button"><%= button_to 'Delete User', @user, method: :delete %></div>
+    </div>
 
 <div class="user_checklists">
-Your checklists:
+<div class="your_checklists"><h3>Your checklists:</h3></div>
 <ul>
-    <% @user.checklists.each do |checklist| %>
+    <div class="user_list"><% @user.checklists.each do |checklist| %>
         <li><%= link_to(checklist.title, checklist_path(checklist))%></li>
     <% end %>
+    </div>
 </ol>
 </div>

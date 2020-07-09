@@ -5,8 +5,7 @@
     <div class="logged_in_wrapper">
         <div class="logged_in_question">
         <% if logged_in? %>
-            <h1>You are Logged In, <%= current_user.username %></h1>
-            <%= button_to 'My Page', user_path(current_user.id), method: :get %>
+            <h1>You are Logged In, <%= current_user.username.capitalize %></h1>
         <%end%>
         </div>
     </div>

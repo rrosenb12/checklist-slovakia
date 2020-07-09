@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get 'welcome', to: 'sessions#welcome'
   get '/sessions/new', to: 'sessions#login', as: 'new_login'  
   delete '/sessions/logout', to: 'sessions#logout', as: 'sessions_logout'  
+  
+  post '/categories', to: 'categories#index'
+  post '/categories/:id', to: 'categories#show', as: 'category_path'
 
   get 'login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'

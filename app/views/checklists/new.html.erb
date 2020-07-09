@@ -14,5 +14,5 @@
       	<%= fields_for @task_checklists do |ff| %>
       		<%= ff.collection_select :task_id, Task.all, :id, :name, {:prompt => "Please Select a Sector"}, {:multiple => true} %>
       	<% end %>
-    <%= f.submit %>
+    <%= f.submit "Create" %>
 <% end %>

@@ -16,7 +16,8 @@
     <div class="navbar">  
       <% if current_user %> 
        <ul>  
-          <li class="right"> <%= button_to "Explore", '/checklists', method: :get%> </li>
+          <li class="right"> <%= button_to 'My Page', user_path(current_user.id), method: :get %></li>
+          <li class="right"> <%= button_to "Explore", categories_path, method: :get%> </li>
           <li class="right"> <%= button_to "Create", '/checklists/new', method: :get%></li>
           <li class="right"> <%= button_to "Log Out", '/sessions/logout', method: :delete%> </li>
           <li class="left"> 

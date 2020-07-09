@@ -4,25 +4,15 @@
 
 <div class="user_name">
     <h1><%= @user.username.upcase %></h1>
-    <%= link_to "Make a New Checklist", new_checklist_path %>
+    <%= button_to "Create List", new_checklist_path, method: :get %>
 
 <br>
-<br>
 
-<%= link_to("Edit This User", edit_user_path(@user))%>
+<%= button_to "Edit User", edit_user_path(@user), method: :get %>
+
+<br>
 
     <%= button_to 'Delete User', @user, method: :delete %>
-
-    <br>
-    <br>
-
-<%= link_to "Explore Checklists", checklists_path %>
-
-<br>
-<br>
-
-<%= link_to "log-out", sessions_logout_path, method: :delete %>
-</div>
 
 <div class="user_checklists">
 Your checklists:

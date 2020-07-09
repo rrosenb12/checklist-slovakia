@@ -36,12 +36,11 @@
 
 <h5> Owner of this Checklist </h5> 
 <% if @checklist.users.first.username %>
-<%= @checklist.users.first.username %>
+      <%= @checklist.users.first.username %>
 <% else %>
 <%end %>
 
 
-<%=link_to "follow-checklist", follow_checklist_path, method: :post %>  
+<%= button_to "follow-checklist", follow_checklist_path, method: :post %>  
 
-<p>Delete this checklist?</p>
 <%= button_to 'Delete Checklist', @checklist, method: :delete %>

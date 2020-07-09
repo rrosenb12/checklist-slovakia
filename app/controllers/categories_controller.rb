@@ -10,6 +10,10 @@ class CategoriesController < ApplicationController
 		
 	end
 
+	def create
+		
+	end
+
 	private
 
 	def find_category

@@ -1,25 +1,23 @@
 body {
 	max-width: 960px;
 	margin: 0px auto;
+	color: #12457f;
 	font-family: 'Indie Flower';
 }
 
 .navbar {
 	margin: 0px auto; 
 	margin-bottom: 10px;
-	max-width: 960px;
 	padding: 2.25%;
-	width: 85%;
 	text-align: center;
 	vertical-align: middle;
-	border-radius: 20px;
-	
+	background-color: red;
+	height: 60px;
 
 
 	ul{
 		background-color: blue;
-		margin: 0px auto 5px auto; 
-		border-radius: 25px;
+		margin: 0px auto 0px auto; 
 		max-width: 960px;
 
 		.right {
@@ -32,7 +30,7 @@ body {
 		
 		li{
 			display:inline-block;
-			padding: 20px;
+			padding-left: 20px;
 		
 		}
 	}
@@ -52,7 +50,9 @@ input[type="submit"]{
 		font-family: 'Indie Flower';
 		font-size: 20px;
 		&:hover {
-			background-color: red
+			cursor: default; transform: rotate(360deg);
+			transition: all 1s ease-in-out 0s; 
+			background-image: url("checklist-logo.png")
 		};
 }
 
@@ -75,3 +75,34 @@ input[type=password], select{
   resize: vertical;
   background-color: blue;
 }
+
+.welcome_image {
+	img {
+		width: 50%;
+		float: left;
+		&:hover {
+			-webkit-animation:spin 4s linear infinite;
+    		-moz-animation:spin 4s linear infinite;
+    		animation:spin 4s linear infinite;
+		}
+	}
+}
+
+.logged_in_wrapper {
+	float: left;
+	width: 300px;
+	margin-left: 88px;
+	margin-top: 40px;
+	.logged_in_question {
+		margin: 0 auto;
+		text-align: center;
+		width: 400px;
+	}
+}
+
+.welcome_page_wrapper {
+	margin-top: 100px;
+}
+
+img:hover { cursor: default; transform: rotate(360deg);
+	transition: all 1s ease-in-out 0s; }

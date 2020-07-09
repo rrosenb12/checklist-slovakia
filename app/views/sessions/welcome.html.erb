@@ -1,9 +1,13 @@
-
-<% if logged_in? %>
-    <h1>You are Logged In, <%= current_user.username %></h1>
-<%end%>
-
-<%= button_to 'My Page', user_path(current_user), method: :get %>
-
-
-<%= image_tag("checklist-logo.png", :alt => "image") %>
+<div class="welcome_page_wrapper">
+    <div class="welcome_image"> 
+        <%= image_tag("checklist-logo.png", :alt => "image") %>
+    </div>
+    <div class="logged_in_wrapper">
+        <div class="logged_in_question">
+        <% if logged_in? %>
+            <h1>You are Logged In, <%= current_user.username %></h1>
+            <%= button_to 'My Page', user_path(current_user.id), method: :get %>
+        <%end%>
+        </div>
+    </div>
+</div>

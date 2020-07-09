@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <div class="navbar">  
+      <% if current_user %> 
+       <ul>  
+          <li class="right"> <%= button_to "Explore", 'checklists_path', method: :get%> </li>
+          <li class="right"> <%= button_to "Create", 'new_checklist_path', method: :get%></li>
+        </ul>
+      <% else%>
+      <ul>  
+          <li class="left"> <%= button_to "Login", '/login', method: :get%> </li>
+          <li class="left"> <%= button_to "Sign Up", '/users/new', method: :get%></li>
+        </ul>
+      <%end %>
+    </div>
     <%= yield %>
   </body>
 </html>

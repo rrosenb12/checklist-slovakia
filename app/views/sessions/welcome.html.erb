@@ -1,7 +1,9 @@
-<img src=“/checklist-logo.png”>
 
 <% if logged_in? %>
     <h1>You are Logged In, <%= current_user.username %></h1>
 <%end%>
 
 <%= button_to 'My Page', user_path(current_user), method: :get %>
+
+
+<%= image_tag("checklist-logo.png", :alt => "image") %>

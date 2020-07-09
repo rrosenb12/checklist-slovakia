@@ -1,7 +1,7 @@
 body {
 	max-width: 960px;
 	margin: 0px auto;
-
+	font-family: 'Indie Flower';
 }
 
 .navbar {
@@ -37,23 +37,23 @@ body {
 		}
 	}
 
-	li:hover{
-		background-color: red;
-		transition-duration: 1s;
-	}
+	// li:hover{
+	// 	background-color: red;
+	// 	transition-duration: 1s;
+	// }
 
 }
-
-form{
-	background-color: green;
-	font-size: 100px;
-}
-
-
 
 input[type="submit"]{
-		color: red;
-		background-color: red;
+		color: black;
+		background-color: white;
+		width: 120px;
+		height: 50px;
+		font-family: 'Indie Flower';
+		font-size: 20px;
+		&:hover {
+			background-color: red
+		};
 }
 
 input[type=text], select{
@@ -75,7 +75,3 @@ input[type=password], select{
   resize: vertical;
   background-color: blue;
 }
-
-
-
-

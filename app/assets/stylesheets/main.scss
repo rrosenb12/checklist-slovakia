@@ -16,7 +16,7 @@ body {
 
 
 	ul{
-		background-color: blue;
+		background-color: #12457f;
 		margin: 0px auto 0px auto; 
 		max-width: 960px;
 
@@ -55,9 +55,13 @@ input[type="submit"]{
 		&:hover {
 			cursor: default; transform: rotate(360deg);
 			transition: all 1s ease-in-out 0s; 
-			background-image: url("checklist-logo.png")
+			background-image: url("flag1.png");
+			object-fit: fill; 
 		};
 }
+
+
+
 
 input[type=text], select{
   width: 100%;
@@ -66,7 +70,8 @@ input[type=text], select{
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
-  background-color: blue;
+  background-color: #12457f;
+;
 }
 
 input[type=password], select{
@@ -76,7 +81,16 @@ input[type=password], select{
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
-  background-color: blue;
+  background-color: #D71F19;
+}
+
+select {
+	width: 20%;
+	color: black;
+	background-color: white;
+	border-radius: 5px;
+	border: 6px solid #12457f;
+	height: 70px;
 }
 
 .welcome_image {
@@ -111,8 +125,8 @@ img:hover { cursor: default; transform: rotate(360deg);
 	transition: all 1s ease-in-out 0s; }
 
 .user_pic {
-	float: left;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .user_checklists {
@@ -125,3 +139,19 @@ img:hover { cursor: default; transform: rotate(360deg);
 	text-align: center;
 	width: 400px;
 }
+
+.list-wrapper{
+	width: 500px;
+	text-align: center;
+	margin: 0 auto;
+	.upcoming_tasks{
+		margin-top: 20px;
+		border: 1px solid black;
+	}
+}
+
+
+
+
+
+

@@ -11,8 +11,8 @@ body {
 	padding: 2.25%;
 	text-align: center;
 	vertical-align: middle;
-	background-color: red;
 	height: 60px;
+	border-bottom: 5px solid black;
 
 
 	ul{
@@ -32,6 +32,9 @@ body {
 			display:inline-block;
 			padding-left: 20px;
 		
+		}
+		.nav_img{
+			margin-top: -10px;
 		}
 	}
 
@@ -106,3 +109,19 @@ input[type=password], select{
 
 img:hover { cursor: default; transform: rotate(360deg);
 	transition: all 1s ease-in-out 0s; }
+
+.user_pic {
+	float: left;
+	margin: 0 auto;
+}
+
+.user_checklists {
+	clear: both;
+	width: 500px;
+}
+
+.user_name {
+	margin: 0 auto;
+	text-align: center;
+	width: 400px;
+}

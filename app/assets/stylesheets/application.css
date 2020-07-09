@@ -10,8 +10,8 @@ body {
   padding: 2.25%;
   text-align: center;
   vertical-align: middle;
-  background-color: red;
-  height: 60px; }
+  height: 60px;
+  border-bottom: 5px solid black; }
   .navbar ul {
     background-color: blue;
     margin: 0px auto 0px auto;
@@ -23,6 +23,8 @@ body {
     .navbar ul li {
       display: inline-block;
       padding-left: 20px; }
+    .navbar ul .nav_img {
+      margin-top: -10px; }
 
 input[type="submit"] {
   color: black;
@@ -80,5 +82,18 @@ img:hover {
   cursor: default;
   transform: rotate(360deg);
   transition: all 1s ease-in-out 0s; }
+
+.user_pic {
+  float: left;
+  margin: 0 auto; }
+
+.user_checklists {
+  clear: both;
+  width: 500px; }
+
+.user_name {
+  margin: 0 auto;
+  text-align: center;
+  width: 400px; }
 
 /*# sourceMappingURL=application.css.map */

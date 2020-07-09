@@ -19,7 +19,10 @@
           <li class="right"> <%= button_to "Explore", '/checklists', method: :get%> </li>
           <li class="right"> <%= button_to "Create", '/checklists/new', method: :get%></li>
           <li class="right"> <%= button_to "Log Out", '/sessions/logout', method: :delete%> </li>
-          <li class="left"> <%= image_submit_tag(“check-bar.png”) %> </li>
+          <li class="left"> 
+            <div class="nav_img"> <%= image_submit_tag('flag1.png') %> </div>
+          </li>
+
         </ul>
       <% else%>
       <ul>  

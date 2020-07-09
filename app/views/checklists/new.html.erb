@@ -9,9 +9,18 @@
 <%= form_for @checklist do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title %>
+<<<<<<< HEAD
       <div class="drop_downs"><div class="select_category"><%= f.collection_select :category_id, Category.all, :id, :category_name %></div>
       	<div class="checklist_tasks"><%= fields_for @task_checklists do |ff| %>
       		<%= ff.collection_select :task_id, Task.all, :id, :name, {:prompt => "Please Select a Sector"}, {:multiple => true} %>
       	<% end %></div>
     <%= f.submit "Create" %></div>
+=======
+      <%= f.label :category_id %>
+      <%= f.collection_select :category_id, Category.all, :id, :category_name %>
+          <%= fields_for @task_checklists do |ff| %>
+        		<%= ff.collection_select :task_id, Task.all, :id, :name, {:prompt => "Please Select a Sector"}, {:multiple => true} %>
+        	<% end %>
+    <%= f.submit "Create" %>
+>>>>>>> bc6865995c1e140109871ee69df729a954d46c90
 <% end %>

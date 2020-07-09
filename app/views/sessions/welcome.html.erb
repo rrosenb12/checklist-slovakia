@@ -6,6 +6,10 @@
         <div class="logged_in_question">
         <% if logged_in? %>
             <h1>You are Logged In, <%= current_user.username.capitalize %></h1>
+        <%else%>
+         <h1>czechoslovakian czecklist </h1>
+        <div class="left"> <%= button_to "Sign Up", '/users/new', method: :get%></div>
+
         <%end%>
         </div>
     </div>

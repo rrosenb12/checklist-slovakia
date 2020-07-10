@@ -2,7 +2,8 @@ body {
   max-width: 960px;
   margin: 0px auto;
   color: #12457f;
-  font-family: 'Indie Flower'; }
+  font-family: 'Indie Flower';
+  background-image: img("flower.jpg"); }
 
 .navbar {
   margin: 0px auto;

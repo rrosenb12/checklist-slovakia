@@ -41,6 +41,7 @@ input[type="submit"] {
     object-fit: fill; }
 
 input[type=text], select {
+  color: white;
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -118,6 +119,28 @@ img:hover {
   margin: 0 auto; }
 
 .user_buttons {
-  background-color: red; }
+  padding: 0px;
+  margin-left: 30px;
+}
+.user_buttons .create_button {
+  float: left;
+}
+.user_buttons .edit_button {
+  float: left;
+}
+.user_buttons .delete_button {
+  float: left;
+}
+
+.user_name .user_checklists {
+  float: left;
+  padding: 0px;
+  margin-left: -40px;
+}
+
+.user_name .user_checklists .user_list {
+  text-align: left;
+  margin-left: 30px;
+}
 
 /*# sourceMappingURL=application.css.map */

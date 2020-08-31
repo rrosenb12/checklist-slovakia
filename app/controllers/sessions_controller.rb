@@ -17,17 +17,6 @@ class SessionsController < ApplicationController
         end 
     end 
 
-    def login 
-    end 
-
-    def welcome
-        
-    end
-
-    def page_requires_login
-        
-    end
-
     def logout
         session.delete(:user_id)
         redirect_to users_path

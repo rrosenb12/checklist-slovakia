@@ -6,14 +6,6 @@ class CategoriesController < ApplicationController
 		@categories = Category.all 
 	end
 
-	def show
-		
-	end
-
-	def create
-		
-	end
-
 	private
 
 	def find_category
